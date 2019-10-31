@@ -42,6 +42,6 @@ class Accident(Resource):
                             'Road_Surface_Conditions':[data['rsc']]
                         }
                     )
-        pred=int(knnmodel.predict(pdf)[0])
-        acc=round(float(knnaccuracy*100),2)
+        pred=int(nbmodel.predict(pdf)[0])
+        acc=round(float(nbknnaccuracy*100),2)
         return make_response(jsonify({'prediction':pred,'accuracy':acc}), 200)

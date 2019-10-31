@@ -20,7 +20,7 @@ Y=data['Target']
 
 X_train, X_test, Y_train, Y_test = sklearn.model_selection.train_test_split(X,Y)
 
-knnmodel=KNeighborsClassifier(n_neighbors = 8).fit(X_train,Y_train)
-knnscore=knnmodel.score(X,Y)
-Y_pred = knnmodel.predict(X_test)
-knnaccuracy=metrics.accuracy_score(Y_test,Y_pred)
+nbmodel=GaussianNB().fit(X_train,Y_train)
+nbscore=nbmodel.score(X,Y)
+Y_pred = nbmodel.predict(X_test)
+nbaccuracy=metrics.accuracy_score(Y_test,Y_pred)
