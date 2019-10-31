@@ -44,4 +44,4 @@ class Accident(Resource):
                     )
         pred=int(nbmodel.predict(pdf)[0])
         acc=round(float(nbaccuracy*100),2)
-        return make_response(jsonify({'prediction':95,'accuracy':1}), 200)
+        return make_response(jsonify({'prediction':pred,'accuracy':acc}), 200)
