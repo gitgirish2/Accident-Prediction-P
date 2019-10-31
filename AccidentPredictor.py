@@ -20,7 +20,7 @@ Y=data['Target']
 
 X_train, X_test, Y_train, Y_test = sklearn.model_selection.train_test_split(X,Y)
 
-nbmodel=GaussianNB().fit(X_train,Y_train)
-nbscore=nbmodel.score(X,Y)
-Y_pred = nbmodel.predict(X_test)
-nbaccuracy=metrics.accuracy_score(Y_test,Y_pred)
+logregmodel=LogisticRegression().fit(X_train,Y_train)
+lrscore=logregmodel.score(X,Y)
+Y_pred = logregmodel.predict(X_test)
+lraccuracy=metrics.accuracy_score(Y_test,Y_pred)
