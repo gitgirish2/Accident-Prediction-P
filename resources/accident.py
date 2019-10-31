@@ -1,7 +1,7 @@
 from flask import jsonify,make_response
 from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
-from AccidentPredictor import *
+#from AccidentPredictor import *
 
 class Accident(Resource):
     parser = reqparse.RequestParser()
@@ -42,6 +42,6 @@ class Accident(Resource):
                             'Road_Surface_Conditions':[data['rsc']]
                         }
                     )
-        pred=int(nbmodel.predict(pdf)[0])
-        acc=round(float(nbknnaccuracy*100),2)
-        return make_response(jsonify({'prediction':pred,'accuracy':acc}), 200)
+        #pred=int(nbmodel.predict(pdf)[0])
+        #acc=round(float(nbknnaccuracy*100),2)
+        return make_response(jsonify({'prediction':95,'accuracy':1}), 200)
